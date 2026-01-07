@@ -1,0 +1,7 @@
+http_port ${PROXY_PORT}
+
+acl allowed_networks src ${ALLOWED_NETWORKS}
+http_access allow allowed_networks
+http_access deny all
+
+access_log stdio:/var/log/squid/access.log

@@ -1,0 +1,13 @@
+services:
+  forward-proxy:
+    build: .
+    ports:
+      - "3128:3128"
+    env_file:
+      - .env
+    networks:
+      - proxy-net
+
+networks:
+  proxy-net:
+    driver: bridge
